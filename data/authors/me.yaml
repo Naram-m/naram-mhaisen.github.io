@@ -1,0 +1,133 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+highlight_name: true
+name:
+  display: Naram Mhaisen
+  given: Naram
+  family: Mhaisen
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+postnominals:
+  - PhD
+role: Postdoctoral Researcher
+bio: |
+  Naram is a Postdoctoral Researcher with the [Networked Systems](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/software-technology/networked-systems)
+  Group at the Faculty of Electrical Engineering, Mathematics, and Computer Science,
+  TU Delft, The Netherlands. His research focuses on online learning techniques
+  with applications in resource management across communication systems. 
+  
+  He received the B.Sc. degree in Computer Engineering from Qatar University in
+  2017 with the Order of Excellence award, and the M.Sc. degree with Distinction
+  in Computing from Qatar University in 2020, supervised by
+  Prof. [Mohsen Guizani](https://mbzuai.ac.ae/study/faculty/professor-mohsen-guizani/).
+  He completed his Ph.D. at TU Delft in 2025, supervised by
+  Dr. [George Iosifidis](https://www.tudelft.nl/en/staff/g.iosifidis/), with a thesis
+  on Optimistic Learning with Applications to Caching Networks. 
+  
+  His work has been
+  recognized by the Microsoft Imagine Cup award (2017) and a NEC Europe Research
+  Fellowship (2022).
+
+affiliations:
+  - name: Delft University of Technology
+    url: https://www.tudelft.nl/
+
+links:
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?hl=en&user=ks-WnxcAAAAJ
+  - icon: brands/github
+    url: https://github.com/Naram-m
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/naram-mhaisen
+
+interests:
+  - Online Learning
+  - Network Optimization
+  - Optimistic Learning
+  # - Non-Stochastic Control
+  # - Resource Management in Communication Systems
+
+# education:
+#   - degree: PhD in Computer Science
+#     institution: Delft University of Technology
+#     start: 2021-09-01
+#     end: 2025-06-30
+#     summary: |
+#       Thesis: "Optimistic Learning with Applications to Caching Networks"
+#       (DOI: 10.4233/uuid:68fd39be-e3d5-4b3a-a3e5-76c80b3121f0).
+#       Supervisors: George Iosifidis, Koen Langendoen.
+#   - degree: MSc in Computing
+#     institution: Qatar University
+#     start: 2018-09-01
+#     end: 2020-07-31
+#     summary: |
+#       GPA 3.88/4.00. Distinguished Research Award.
+#       Thesis: "Novel Techniques for Blockchain-enabled IoT leveraging Reinforcement Learning".
+#       Supervisors: Mohsen Guizani, Noora Fetais.
+#   - degree: BSc in Computer Engineering
+#     institution: Qatar University
+#     start: 2013-09-01
+#     end: 2017-06-30
+#     summary: |
+#       GPA 4.00/4.00. Order of Excellence Award. Qatar University Honors Program.
+
+experience:
+  - role: Postdoctoral Researcher
+    org: Delft University of Technology
+    start: 2025-07-01
+    summary: |
+      Horizon Europe project "ORIGAMI" — online learning methods for resource
+      allocation across communication networks.
+  - role: Research Assistant
+    org: Qatar University
+    start: 2020-07-01
+    end: 2021-04-30
+    summary: |
+      Edge computing for medical data exchange using Blockchain.
+  - role: Graduate Research & Teaching Assistant
+    org: Qatar University
+    start: 2018-10-01
+    end: 2020-07-31
+    summary: |
+      Reinforcement learning for IoT systems; Cyber Range challenge team with Thales.
+  - role: Research Assistant
+    org: Qatar University
+    start: 2017-09-01
+    end: 2018-08-31
+    summary: |
+      National Priority Project on cloud storage privacy.
+  - role: Software Engineer
+    org: Qatar Mobility Innovation Center
+    start: 2017-07-01
+    end: 2017-09-30
+    summary: |
+      Blockchain + IoT prepaid energy embedded system.
+
+awards:
+  - title: NEC Laboratories Europe Research Fellowship
+    awarder: NEC Laboratories Europe
+    date: "2022-01-01"
+    icon: hero/trophy
+  - title: IEEE Best Demo Award
+    awarder: Informatics, IoT, and Enabling Technologies conference
+    date: "2020-01-01"
+    icon: hero/trophy
+  - title: Microsoft Imagine Cup — Worldwide Finalist (Qatar + MEA Winner)
+    awarder: Microsoft
+    date: "2017-07-01"
+    icon: hero/trophy
+  - title: Best Bachelor Senior Project
+    awarder: Qatar National Research Fund (QNRF)
+    date: "2017-06-01"
+    icon: hero/trophy
+  - title: Order of Excellence Award
+    awarder: Qatar University
+    date: "2017-06-01"
+    icon: hero/trophy
+  - title: First Place — GCC Robotics Challenge (Qatar Round)
+    awarder: GCC Robotics Challenge
+    date: "2017-01-01"
+    summary: Also winner in 2016.
+    icon: hero/trophy

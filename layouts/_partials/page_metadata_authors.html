@@ -1,0 +1,19 @@
+{{/* Display author list (plain text, no links). */}}
+
+{{- $authors := .Params.authors -}}
+
+{{ if $authors }}
+  {{- if not (reflect.IsSlice $authors) -}}
+    {{- $authors = slice $authors -}}
+  {{- end -}}
+
+  {{ range $index, $raw := $authors }}
+    {{- $slug := $raw | urlize -}}
+    {{- $profile := partial "functions/get_author_profile" (dict "slug" $slug "title" $raw) -}}
+    {{- $display := $profile.title | default $raw -}}
+    {{- $highlight_name := $profile.is_owner | default false -}}
+
+    {{- if gt $index 0 }}, {{ end -}}
+    <span {{ if $highlight_name }}class="font-bold"{{end}}>{{ $display }}</span>
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Candidate C — Figure-forward card</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #5a5a5a;
+    --line: #eaeaea;
+    --accent: #1a4d8f;
+    --bg-hover: #fafbfc;
+    --pill: #f1f3f6;
+  }
+  * { box-sizing: border-box; }
+  body { font: 16px/1.55 "Source Serif 4", "Source Serif Pro", Georgia, serif; max-width: 1100px; margin: 3rem auto; padding: 0 2rem; color: var(--fg); }
+  h1 { font-family: Lora, Georgia, serif; font-weight: 700; font-size: 2.2rem; margin: 0 0 2.4rem; letter-spacing: -0.01em; }
+  ol.pubs { list-style: none; padding: 0; margin: 0; }
+  ol.pubs > li { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .thumb { width: 100%; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #fff; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 1.4rem; text-align: center; padding: 0.5rem; line-height: 1.2; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .pill { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--pill); border-radius: 999px; padding: 0.15rem 0.7rem; font-size: 0.78rem; color: var(--muted); font-family: -apple-system, sans-serif; }
+  .pill b { color: var(--fg); }
+  .title { font-family: Lora, Georgia, serif; font-weight: 600; font-size: 1.25rem; margin: 0.5rem 0 0.35rem; color: var(--fg); }
+  .authors { color: var(--muted); font-size: 0.96rem; margin: 0 0 0.35rem; }
+  .authors b { color: var(--fg); }
+  .venue { font-style: italic; color: var(--accent); margin: 0 0 0.7rem; font-size: 0.96rem; }
+  .links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .links a { font-size: 0.82rem; padding: 0.28rem 0.8rem; border-radius: 6px; background: #fff; border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-family: -apple-system, sans-serif; transition: all 0.15s ease; }
+  .links a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+
+<h1>Publications — Candidate C</h1>
+
+<ol class="pubs">
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #2b5797, #5e35b1);">AISTATS</div>
+    <div class="body">
+      <span class="pill"><b>AISTATS</b> · 2026</span>
+      <p class="title">Partially Lazy Gradient Descent for Smoothed Online Learning</p>
+      <p class="authors"><b>Naram Mhaisen</b>, George Iosifidis</p>
+      <p class="venue">AISTATS</p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #c2185b, #f06292);">KBS</div>
+    <div class="body">
+      <span class="pill"><b>KBS</b> · 2026</span>
+      <p class="title">DRONE-RL: Dynamic Reinforcement Learning for Online Navigation of UAVs in Evolving Environments</p>
+      <p class="authors">Noor Khial, Mhd Saria Allahham, <b>Naram Mhaisen</b>, Loay Ismail, Mohamed Abdalla Mabrok, Amr Mohamed</p>
+      <p class="venue">Knowledge-Based Systems</p>
+      <div class="links"></div>
+    </div>
+  </li>
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #00695c, #26a69a);">ICML</div>
+    <div class="body">
+      <span class="pill"><b>ICML</b> · 2025</span>
+      <p class="title">On the Dynamic Regret of Following the Regularized Leader: Optimism with History Pruning</p>
+      <p class="authors"><b>Naram Mhaisen</b>, George Iosifidis</p>
+      <p class="venue">International Conference on Machine Learning</p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a><a href="#">Poster</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #283593, #5e35b1);">FnT<br>Networking</div>
+    <div class="body">
+      <span class="pill"><b>FnT Networking</b> · 2025</span>
+      <p class="title">Optimistic Learning for Communication Networks</p>
+      <p class="authors">George Iosifidis, <b>Naram Mhaisen</b>, Douglas J. Leith</p>
+      <p class="venue">Foundations and Trends in Networking</p>
+      <div class="links"><a href="#">Preprint</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #1a73e8, #4285f4);">IEEE&nbsp;TMC</div>
+    <div class="body">
+      <span class="pill"><b>IEEE TMC</b> · 2024</span>
+      <p class="title">Online Caching with no Regret: Optimistic Learning via Recommendations</p>
+      <p class="authors"><b>Naram Mhaisen</b>, George Iosifidis, Douglas J. Leith</p>
+      <p class="venue">IEEE Transactions on Mobile Computing</p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="thumb" style="background: linear-gradient(135deg, #6a1b9a, #ab47bc);">SIGMETRICS</div>
+    <div class="body">
+      <span class="pill"><b>SIGMETRICS / POMACS</b> · 2022</span>
+      <p class="title">Optimistic No-regret Algorithms for Discrete Caching</p>
+      <p class="authors"><b>Naram Mhaisen</b>, Abhishek Sinha, Georgios Paschos, George Iosifidis</p>
+      <p class="venue">ACM SIGMETRICS / POMACS</p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+</ol>
+
+</body>
+</html>

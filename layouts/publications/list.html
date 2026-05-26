@@ -1,0 +1,135 @@
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+<style>
+  .pubs-wrapper { max-width: 64rem; margin: 2.5rem auto 0 auto; padding: 0 1rem; }
+  .pubs-wrapper .year-heading {
+    font-family: var(--hb-font-heading, Lora, Georgia, serif);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 2.2rem 0 0.4rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(120, 120, 120, 0.2);
+    letter-spacing: 0.01em;
+    color: var(--hb-color-primary, #1a4d8f);
+  }
+  .pubs-wrapper ol.pubs { list-style: none; padding: 0; margin: 0; }
+  .pubs-wrapper ol.pubs > li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.2rem;
+    padding: 0.85rem 0.7rem;
+    border-radius: 8px;
+    align-items: start;
+    transition: background 0.15s ease;
+  }
+  .pubs-wrapper ol.pubs > li:hover { background: rgba(120, 120, 120, 0.06); }
+  .pubs-wrapper .pub-thumb {
+    width: 140px; height: 90px; border-radius: 6px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 0.3rem; line-height: 1.2;
+    font-family: var(--hb-font-heading, Lora, Georgia, serif);
+    text-decoration: none;
+  }
+  .pubs-wrapper .pub-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .pubs-wrapper .pub-thumb .badge-name { font-weight: 700; font-size: 0.95rem; color: #fff; }
+  .pubs-wrapper .pub-thumb .badge-year { font-size: 0.72rem; opacity: 0.9; margin-top: 0.2rem; font-family: -apple-system, sans-serif; color: #fff; }
+  .pubs-wrapper .pub-body .pub-title { font-family: var(--hb-font-heading, Lora, Georgia, serif); font-weight: 600; font-size: 1.05rem; margin: 0 0 0.2rem; line-height: 1.35; }
+  .pubs-wrapper .pub-body .pub-authors { color: rgba(90,90,90,0.95); font-size: 0.92rem; margin: 0 0 0.25rem; }
+  .dark .pubs-wrapper .pub-body .pub-authors { color: rgba(200,200,200,0.85); }
+  .pubs-wrapper .pub-body .pub-authors .font-bold { color: var(--hb-color-foreground, #1a1a1a); }
+  .dark .pubs-wrapper .pub-body .pub-authors .font-bold { color: #f5f5f5; }
+  .pubs-wrapper .pub-body .pub-venue { font-style: italic; font-size: 0.93rem; color: var(--hb-color-foreground, #1a1a1a); margin: 0 0 0.5rem; }
+  .dark .pubs-wrapper .pub-body .pub-venue { color: #ffffff; }
+  .pubs-wrapper .pub-body .pub-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .pubs-wrapper .pub-body .pub-links .hb-attachment-link {
+    font-size: 0.77rem;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba(120,120,120,0.3);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--hb-color-foreground, #1a1a1a);
+    background: transparent;
+    transition: all 0.15s ease;
+  }
+  .dark .pubs-wrapper .pub-body .pub-links .hb-attachment-link { color: #e5e5e5; }
+  .pubs-wrapper .pub-body .pub-links .hb-attachment-link:hover {
+    border-color: #f59e0b;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+  }
+  .dark .pubs-wrapper .pub-body .pub-links .hb-attachment-link:hover {
+    border-color: #fbbf24;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.12);
+  }
+  @media (max-width: 640px) {
+    .pubs-wrapper ol.pubs > li { grid-template-columns: 100px 1fr; gap: 0.8rem; }
+    .pubs-wrapper .pub-thumb { width: 100px; height: 70px; }
+  }
+</style>
+
+{{/* Unified badge color matching the site's primary palette */}}
+{{ $badge_bg := "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)" }}
+
+{{/* Group publications by year (descending) */}}
+{{ $pubs := .Pages.ByDate.Reverse }}
+{{ $byYear := dict }}
+{{ $years := slice }}
+{{ range $pubs }}
+  {{ $y := (time (.Params.event_start | default .Date)).Format "2006" }}
+  {{ if not (isset $byYear $y) }}
+    {{ $byYear = merge $byYear (dict $y (slice)) }}
+    {{ $years = $years | append $y }}
+  {{ end }}
+  {{ $existing := index $byYear $y }}
+  {{ $byYear = merge $byYear (dict $y ($existing | append .)) }}
+{{ end }}
+
+<div class="pubs-wrapper">
+{{ range $year := $years }}
+  <h2 class="year-heading">{{ $year }}</h2>
+  <ol class="pubs">
+    {{ range $item := index $byYear $year }}
+      {{ $venue_short := $item.Params.publication_short | default ($item.Params.publication | default "") }}
+      {{ $featured := "" }}
+      {{ with $item.Resources.GetMatch "featured.*" }}{{ $featured = . }}{{ end }}
+      <li>
+        <div class="pub-thumb" {{ if not $featured }}style="background: {{ $badge_bg | safeCSS }};"{{ end }}>
+          {{ if $featured }}
+            {{ $thumb := $featured.Fill "560x360 Smart" }}
+            <img src="{{ $thumb.RelPermalink }}" alt="{{ $item.Title }}" loading="lazy" />
+          {{ else }}
+            <div>
+              <div class="badge-name">{{ $venue_short }}</div>
+              <div class="badge-year">{{ $year }}</div>
+            </div>
+          {{ end }}
+        </div>
+        <div class="pub-body">
+          <div class="pub-title">{{ $item.Title }}</div>
+          <div class="pub-authors">{{ partial "page_metadata_authors" $item }}</div>
+          {{ if $item.Params.publication }}
+            <div class="pub-venue">{{ $item.Params.publication | markdownify }}</div>
+          {{ else if $item.Params.publication_short }}
+            <div class="pub-venue">{{ $item.Params.publication_short | markdownify }}</div>
+          {{ end }}
+          {{ if partial "functions/has_attachments" $item }}
+          <div class="pub-links">
+            {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+          </div>
+          {{ end }}
+        </div>
+      </li>
+    {{ end }}
+  </ol>
+{{ end }}
+</div>
+
+{{ end }}

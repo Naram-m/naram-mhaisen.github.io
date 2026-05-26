@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Candidate B — Venue tag prominent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #5a5a5a;
+    --line: #ececec;
+    --accent: #1a4d8f;
+    --bg-hover: #f8f9fb;
+  }
+  * { box-sizing: border-box; }
+  body { font: 16px/1.55 "Source Serif 4", "Source Serif Pro", Georgia, serif; max-width: 1024px; margin: 3rem auto; padding: 0 2rem; color: var(--fg); }
+  h1 { font-family: Lora, Georgia, serif; font-weight: 700; font-size: 2.2rem; margin: 0 0 2.2rem; letter-spacing: -0.01em; }
+  ol.pubs { list-style: none; padding: 0; margin: 0; }
+  ol.pubs > li { display: grid; grid-template-columns: 110px 1fr; gap: 1.4rem; align-items: center; padding: 1rem 0.8rem; border-bottom: 1px solid var(--line); transition: background 0.15s ease; }
+  ol.pubs > li:hover { background: var(--bg-hover); }
+  .badge { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 64px; border-radius: 10px; color: #fff; padding: 0.3rem 0.4rem; text-align: center; }
+  .badge .name { font-family: Lora, Georgia, serif; font-weight: 700; font-size: 0.92rem; line-height: 1.1; letter-spacing: 0.02em; }
+  .badge .year { font-size: 0.72rem; opacity: 0.9; margin-top: 0.15rem; font-family: -apple-system, sans-serif; }
+  .body .title { font-family: Lora, Georgia, serif; font-weight: 600; font-size: 1.1rem; margin: 0 0 0.3rem; color: var(--fg); }
+  .body .meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.5rem; }
+  .body .meta b { color: var(--fg); }
+  .body .meta .venue { font-style: italic; }
+  .links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .links a { font-size: 0.75rem; padding: 0.14rem 0.5rem; border-radius: 4px; background: #f1f3f6; color: var(--fg); text-decoration: none; transition: background 0.15s ease; }
+  .links a:hover { background: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+
+<h1>Publications — Candidate B</h1>
+
+<ol class="pubs">
+  <li>
+    <div class="badge" style="background:#2b5797;"><span class="name">AISTATS</span><span class="year">2026</span></div>
+    <div class="body">
+      <p class="title">Partially Lazy Gradient Descent for Smoothed Online Learning</p>
+      <p class="meta"><b>Naram Mhaisen</b>, George Iosifidis · <span class="venue">AISTATS</span></p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="badge" style="background:#c2185b;"><span class="name">KBS</span><span class="year">2026</span></div>
+    <div class="body">
+      <p class="title">DRONE-RL: Dynamic Reinforcement Learning for Online Navigation of UAVs in Evolving Environments</p>
+      <p class="meta">Noor Khial, Mhd Saria Allahham, <b>Naram Mhaisen</b>, Loay Ismail, Mohamed Abdalla Mabrok, Amr Mohamed · <span class="venue">Knowledge-Based Systems</span></p>
+      <div class="links"></div>
+    </div>
+  </li>
+  <li>
+    <div class="badge" style="background:#00695c;"><span class="name">ICML</span><span class="year">2025</span></div>
+    <div class="body">
+      <p class="title">On the Dynamic Regret of Following the Regularized Leader: Optimism with History Pruning</p>
+      <p class="meta"><b>Naram Mhaisen</b>, George Iosifidis · <span class="venue">International Conference on Machine Learning</span></p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a><a href="#">Poster</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="badge" style="background:#283593;"><span class="name">FnT Net</span><span class="year">2025</span></div>
+    <div class="body">
+      <p class="title">Optimistic Learning for Communication Networks</p>
+      <p class="meta">George Iosifidis, <b>Naram Mhaisen</b>, Douglas J. Leith · <span class="venue">Foundations and Trends in Networking</span></p>
+      <div class="links"><a href="#">Preprint</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="badge" style="background:#1a73e8;"><span class="name">IEEE TMC</span><span class="year">2024</span></div>
+    <div class="body">
+      <p class="title">Online Caching with no Regret: Optimistic Learning via Recommendations</p>
+      <p class="meta"><b>Naram Mhaisen</b>, George Iosifidis, Douglas J. Leith · <span class="venue">IEEE Transactions on Mobile Computing</span></p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+  <li>
+    <div class="badge" style="background:#6a1b9a;"><span class="name">SIG&shy;METRICS</span><span class="year">2022</span></div>
+    <div class="body">
+      <p class="title">Optimistic No-regret Algorithms for Discrete Caching</p>
+      <p class="meta"><b>Naram Mhaisen</b>, Abhishek Sinha, Georgios Paschos, George Iosifidis · <span class="venue">ACM SIGMETRICS / POMACS</span></p>
+      <div class="links"><a href="#">Preprint</a><a href="#">Code</a></div>
+    </div>
+  </li>
+</ol>
+
+</body>
+</html>

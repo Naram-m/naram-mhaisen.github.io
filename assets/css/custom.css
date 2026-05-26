@@ -1,0 +1,22 @@
+/* Keep resume-biography-3 from leaving a tall empty area before the
+   next section. The block hardcodes `xl:py-32` (8rem) padding plus
+   gradient-mesh background min-height, so we override here. */
+section:has(.resume-biography-3),
+[class*="resume-biography-3"] {
+  min-height: auto !important;
+}
+
+.resume-biography {
+  padding-top: 2rem !important;
+  padding-bottom: 0 !important;
+}
+
+#section-resume-biography-3 {
+  margin-bottom: 0 !important;
+}
+
+/* Hide the site name in the navbar (still set in identity.name so it remains
+   in copyright + <title>). The <a> stays clickable as a small home target. */
+.navbar-brand {
+  font-size: 0 !important;
+}

@@ -1,0 +1,38 @@
+{{ $item := .item }}
+{{ $year_value := $item.Params.event_start | default $item.Date }}
+{{ $year := (time $year_value).Format "2006" }}
+
+{{/* Unified badge color matching the site's primary palette */}}
+{{ $badge_bg := "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)" }}
+{{ $venue_short := $item.Params.publication_short | default ($item.Params.publication | default "") }}
+
+{{ $featured := "" }}
+{{ with $item.Resources.GetMatch "featured.*" }}{{ $featured = . }}{{ end }}
+
+<li>
+  <div class="pub-thumb" {{ if not $featured }}style="background: {{ $badge_bg | safeCSS }};"{{ end }}>
+    {{ if $featured }}
+      {{ $thumb := $featured.Fill "560x360 Smart" }}
+      <img src="{{ $thumb.RelPermalink }}" alt="{{ $item.Title }}" loading="lazy" />
+    {{ else }}
+      <div>
+        <div class="badge-name">{{ $venue_short }}</div>
+        <div class="badge-year">{{ $year }}</div>
+      </div>
+    {{ end }}
+  </div>
+  <div class="pub-body">
+    <div class="pub-title">{{ $item.Title }}</div>
+    <div class="pub-authors">{{ partial "page_metadata_authors" $item }}</div>
+    {{ if $item.Params.publication }}
+      <div class="pub-venue">{{ $item.Params.publication | markdownify }}</div>
+    {{ else if $item.Params.publication_short }}
+      <div class="pub-venue">{{ $item.Params.publication_short | markdownify }}</div>
+    {{ end }}
+    {{ if partial "functions/has_attachments" $item }}
+    <div class="pub-links">
+      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+    </div>
+    {{ end }}
+  </div>
+</li>
