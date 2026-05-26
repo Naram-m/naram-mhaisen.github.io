@@ -8,7 +8,7 @@ date: "2025-04-01T00:00:00Z"
 publishDate: "2025-04-01T00:00:00Z"
 
 publication_types: ["book"]
-publication: "*Foundations and Trends in Networking* (accepted, expected Q2 2026)"
+publication: "*Foundations and Trends in Networking* (accepted, expected Q3 2026)"
 publication_short: "FnT Networking"
 
 abstract: A monograph surveying optimistic online learning techniques and their applications to communication networks, including caching, routing, and resource management.

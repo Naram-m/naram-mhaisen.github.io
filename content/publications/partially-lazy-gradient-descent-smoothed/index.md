@@ -7,7 +7,7 @@ date: "2026-05-01"
 publishDate: "2026-01-01"
 
 publication_types: ["article"]
-publication: "*AISTATS 2026*"
+publication: "In *Proceedings of the 29th International Conference on Artificial Intelligence and Statistics (AISTATS)*"
 publication_short: "AISTATS"
 
 abstract: We propose a partially lazy variant of gradient descent for smoothed online learning, balancing switching costs against regret in dynamic environments.
